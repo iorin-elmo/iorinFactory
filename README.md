@@ -1,2 +1,3 @@
 # iorinFactory
-cookie clicker
+cookie clicker  
+practice for Cookie
