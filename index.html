@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="./head.ico">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Idling Iorin</title>
+  <link rel="stylesheet" type="text/css" href="elm.css">
+</head>
+<body>
+<pre>
+<code>
+  <main/></main>
+</code>
+</pre>
+  <script src="elm.js"></script>
+  <script>
+    var storedData = localStorage.getItem('model');
+    var flags = storedData ? JSON.parse(storedData) : null;
+
+    var app = Elm.Main.init({
+      node: document.querySelector('main'),
+      flags: flags
+    });
+    app.ports.setLocalStorage.subscribe(function(req){
+        localStorage.setItem("model", JSON.stringify(req));
+    });
+  </script>
+</body>
+</html>
